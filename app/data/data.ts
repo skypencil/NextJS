@@ -1,12 +1,18 @@
 export const data = [
     {
-        id: 0,
+        id: 1,
         todo: 'Learn JS',
         author: 'Salim',
         done: false
     },
     {
-        id: 1,
+        id: 2,
+        todo: 'Learn TS',
+        author: 'Salim',
+        done: false
+    },
+    {
+        id: 3,
         todo: 'Learn TS',
         author: 'Ali',
         done: false
