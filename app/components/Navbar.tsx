@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+
+
 const Navbar = () => {
     return (
         <div className="navbar bg-base-100">
