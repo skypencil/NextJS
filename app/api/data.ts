@@ -16,5 +16,11 @@ export const data = [
         todo: 'Learn TS',
         author: 'Ali',
         done: false
+    },
+    {
+        id: 4,
+        todo: 'Learn Java',
+        author: 'Ahmad',
+        done: true
     }
 ]

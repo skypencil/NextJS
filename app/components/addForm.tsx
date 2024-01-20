@@ -12,7 +12,7 @@ const AddForm = () => {
     const router = useRouter()
     const [todo, setTodo] = useState("")
     const [author, setAuthor] = useState("")
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e:any) => {
         e.preventDefault()
         const newTodo = {
             todo: todo,

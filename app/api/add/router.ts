@@ -1,6 +1,6 @@
 import { data } from "../data"
 
-async function POST(request, {params}) {
+async function POST(request:any, {params}:any) {
 
     const body = await request.json()
 
