@@ -1,6 +1,7 @@
 import UpdateTodo from "@/app/components/UpdateTodo"
-import DeleteTodo from "@/app/components/DeleteTodo"
-import { Params } from "@/app/components/params"
+import DeleteTodo from "@/app/components/DeleteTodo" 
+import { Params } from "@/app/components/Params"
+ 
 
 const fetchData = async () => {
     const res = fetch(`http://localhost:3000/api/`)
@@ -8,14 +9,14 @@ const fetchData = async () => {
 
     return data
 }
-
-const ViewTodo = async ({params} : { params: Params }) => {
-
-    const {author, id} = params
+ 
+const ViewOneTodo = async ({params}:{params: Params}) => {
 
     const data = await fetchData()
 
-    let matched_todo = data.find((item: { author: string; id: number }) => item.author === author && item.id === parseInt(id))
+    let matched_todo = data.find((item: { author: any; id: number }) => 
+    item.author === params.author && item.id === parseInt(params.id))
+ 
 
 
     return (
@@ -32,4 +33,6 @@ const ViewTodo = async ({params} : { params: Params }) => {
     )
 }
 
-export default ViewTodo
+ 
+export default ViewOneTodo
+ 

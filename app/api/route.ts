@@ -1,7 +1,10 @@
 import { data } from "./data";
+import { revalidatePath } from "next/cache";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
-    return Response.json(data)
+export async function GET(request: NextRequest) {
+
+    return NextResponse.json(data)
 }
 
 export async function POST(request: Request) {

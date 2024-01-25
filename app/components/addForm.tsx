@@ -1,34 +1,38 @@
 'use client'
 
+import { revalidatePath } from "next/cache"
+
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
+
+
 const AddForm = () => {
+    
     const router = useRouter()
     const [todo, setTodo] = useState("")
     const [author, setAuthor] = useState("")
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
         e.preventDefault()
         const newTodo = {
             todo: todo,
             author: author
         }
-        console.log(newTodo)
-        const res = await fetch("http://localhost:3000/data/", {
+        const res = await fetch("http://localhost:3000/api/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(newTodo)
         })
-        
+
         if (res.ok) {
-            router.refresh()
-            router.push("/todos")
+            router.push("/todos/list/")
         }
 
-        const d = await res.json()
+        const res2 = await fetch("http://localhost:3000/api/")
+
+        const d = await res2.json()
         console.log(d)
     }
 
