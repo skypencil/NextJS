@@ -1,6 +1,7 @@
 import { data } from "@/app/api/data";
+import { Params } from "@/app/components/Params";
 
-export async function PATCH(request:any, {params}:any) {
+export async function PATCH(request:Request, {params}:{params:Params}) {
 
     let matched_todo = data.find(item => item.author === params.author && item.id === parseInt(params.id))
     

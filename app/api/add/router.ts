@@ -1,6 +1,7 @@
+import { Params } from "@/app/components/Params"
 import { data } from "../data"
 
-async function POST(request:any, {params}:any) {
+async function POST(request:Request, {params}:{params: Params}) {
 
     const body = await request.json()
 

@@ -12,7 +12,7 @@ const AddForm = () => {
     const router = useRouter()
     const [todo, setTodo] = useState("")
     const [author, setAuthor] = useState("")
-    const handleSubmit = async (e:any) => {
+    const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
         e.preventDefault()
         const newTodo = {
             todo: todo,
