@@ -12,7 +12,8 @@ const ViewOneTodo = async ({params}:any) => {
 
     const data = await fetchData()
 
-    let matched_todo = data.find((item: { author: any; id: number }) => item.author === params.author && item.id === parseInt(params.id))
+    let matched_todo = data.find((item: { author: any; id: number }) => 
+    item.author === params.author && item.id === parseInt(params.id))
 
 
     return (
